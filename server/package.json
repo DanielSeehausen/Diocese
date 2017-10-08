@@ -1,0 +1,29 @@
+{
+  "name": "cathedral-server",
+  "version": "1.0.0",
+  "description": "backend for cathedral game",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --color --config  webpack.config.js --watch",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSeehausen/cathedral-server.git"
+  },
+  "keywords": [
+    "cathedral",
+    "websocket",
+    "react-server"
+  ],
+  "author": "Daniel Seehausen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielSeehausen/cathedral-server/issues"
+  },
+  "homepage": "https://github.com/DanielSeehausen/cathedral-server#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "ws": "^3.2.0"
+  }
+}
