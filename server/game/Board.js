@@ -30,9 +30,9 @@ class Board {
     return (this.board[pos[0]][pos[1]] !== null) ? true : false
   }
 
-  movesAreValid(positions) {
-    for (let posIdx = 0; posIdx < positions.length; posIdx++) {
-      if (this.posOutOfBounds(positions[posIdx]) || this.posOccupied(positions[posIdx]))
+  movesAreValid(blockCoords) {
+    for (let posIdx = 0; posIdx < blockCoords.length; posIdx++) {
+      if (this.posOutOfBounds(blockCoords[posIdx]) || this.posOccupied(blockCoords[posIdx]))
         return false
     }
     return true
@@ -42,9 +42,9 @@ class Board {
     this.board[pos[0]][pos[1]] = playerID
   }
 
-  playerMove(playerID, positions) {
-    if (this.movesAreValid(positions)) {
-      positions.forEach(pos => this._assignPlayer(playerID, pos))
+  playerMove(playerID, pieceName, blockCoords) {
+    if (this.movesAreValid(blockCoords)) {
+      blockCoords.forEach(pos => this._assignPlayer(playerID, pos))
       return true
     }
     return false

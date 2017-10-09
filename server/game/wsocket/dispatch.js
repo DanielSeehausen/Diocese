@@ -12,12 +12,13 @@ const DISPATCH_DICT = {
   'move': move,
   'pass': pass,
   'chat': chat,
-  'quit': quit
+  'quit': quit,
+  'noAction': (game, plater, msg) => { console.log("NO ACTION FROM CLIENT!: ", msg); return {debug: "noAction"} }
 }
 
 function dispatch(game, player, payload) {
   let msg = digestMsg("unpack", payload)
-  let action = msg["action"]
+  let action = msg["action"] || "noAction"
   let response = DISPATCH_DICT[action](game, player, msg)
   return digestMsg('pack', response, action)
 }

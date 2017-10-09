@@ -40,7 +40,7 @@ class Piece {
   }
 
   toString() {
-    return `Piece: ${this.name}\tPlayerID: ${this.player.id}\tP/D: ${this.played}/${this.destroyed}`
+    return `Piece: ${this.name}\tPlayerID: ${this.owner.id}\tP/D: ${this.played}/${this.destroyed}`
   }
 }
 

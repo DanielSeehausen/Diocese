@@ -13,12 +13,14 @@ class Game {
     this.activePlayer = player
   }
 
-  assignPieces() {
-    [this.p1, this.p2].forEach(player => player.assignPieces())
-  }
+  // this moved to player -- they are assigned in constructor
+  // assignPieces() {
+  //   [this.p1, this.p2].forEach(player => player.assignPieces())
+  // }
 
   startGame() {
-    this.assignPieces()
+    // this.assignPieces()
+    emit("game starting")
   }
 
   emit(msg) {

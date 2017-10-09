@@ -22,10 +22,12 @@ app.get('/lobby', (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-  res.sendFile(root + '/build/testGames/testIndex.html')
+  res.sendFile(root + '/build/test/testIndex.html')
 })
-app.get('/test-client', (req, res) => {
-  res.sendFile(root + '/build/testGames/testClient.js')
+
+app.get('/test/:file', (req, res) => {
+  console.log("WOT", req.params.file)
+  res.sendFile(root + '/build/test/' + req.params.file)
 })
 
 // routes for all the 404 pages assets, including stylesheet

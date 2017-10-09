@@ -20,7 +20,7 @@ wss.on('connection', (ws, req) => {
        * 4. Digester converts to format for WS communication with client
        * 5. Response Msg gets emitted via Game.instance to both players
       */
-      let response = dispatch(game, player, payload)
+      const response = dispatch(game, player, payload)
       console.log("responding with: ", response)
       game.emit(response)
       console.log('\t...success')
